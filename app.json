@@ -1,0 +1,48 @@
+{
+    "pages": [
+   
+        "pages/index/index",
+        "pages/register/regitster",
+        "pages/activitylist/activitylist",
+        "pages/activityinfo/activityinfo",
+        "pages/talklist/talklist",
+        "pages/talkinfo/talkinfo",
+        "pages/mine/mine",
+        "pages/info/info",
+        "pages/mytalk/mytalk",
+        "pages/about/about",
+        "pages/mymessage/mymessage",
+        "pages/test/test",
+        "pages/logs/logs"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "志愿乡村",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "custom": true,
+        "backgroundColor": "#ffffff",
+        "color": "#999999",
+        "selectedColor": "#545454",
+        "borderStyle": "black",
+        "list": [
+            {
+                "pagePath": "pages/activitylist/activitylist",
+                "text": "志愿项目"
+            },
+            {
+                "pagePath": "pages/talklist/talklist",
+                "text": "讨论社区"
+            },
+            {
+                "pagePath": "pages/mine/mine",
+                "text": "个人信息"
+            }
+        ]
+    },
+
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

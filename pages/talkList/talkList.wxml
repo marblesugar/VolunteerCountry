@@ -1,0 +1,26 @@
+<!--pages/talklist/talklist.wxml-->
+<view class="back"></view>
+<view class="body">
+    <view class="cu-list" wx:for="{{list}}" wx:key bindtap="toSomeone" data-id="{{index}}">
+        <view class="cu-item bg-white padding-xs radius shadow">
+            <view class="flex margin-xs padding-sm solids-bottom">
+                <view class="cu-avatar round lg" style="background-image:url({{item.avatar}});"></view>
+                <view class="grid col-1 ">
+                    <view class="text-grey margin-left">{{item.name}}</view>
+                    <view class="text-grey text-xs margin-left">{{item.time}}</view>
+                </view>
+            </view>
+            <view class="flex margin-sm" id="content">
+                {{item.content}}
+            </view>
+            <view class="flex">
+                <text class="cuIcon-message margin-sm " style="margin-left: 500rpx;font-size: 40rpx;"></text>
+                <text class="cuIcon-we margin-sm" style="font-size: 40rpx;" wx:if="{{item.isCollect==0}}"></text>
+                <text class="cuIcon-wefill margin-sm text-red" style="font-size: 40rpx;" wx:if="{{item.isCollect==1}}"></text>
+            </view>
+
+        </view>
+
+    </view>
+
+</view>

@@ -1,0 +1,21 @@
+<!--pages/mytalk/mytalk.wxml-->
+<view class="flex padding-bottom" style="background-color: #F06565;">
+<view class="cu-avatar round " style="background-image: url({{avatar}});width: 250rpx;height: 250rpx;margin-top: 50rpx;margin-left: 80rpx;border: 40rpx solid white;">
+</view>
+<view class="grid col-1 margin-top margin-left-xs padding">
+    <view class="text-white text-bold text-lg margin-bottom">我的帖子</view>
+    <view class="text-white">发的帖子全在这里哦~</view>
+</view>
+</view>
+<view class="cu-list margin" wx:for="{{list}}" wx:key bindtap="toSomeone">
+<view class="cu-item bg-white padding radius shadow" style="border-left: 10rpx solid #F74D4D;">
+<view class="text-black" id="content">{{item.content}}</view>
+<view >
+<text style="margin-right: 150rpx;">{{item.time}}</text>
+<text class="cuIcon-wefill text-red " style="font-size: 45rpx;"></text>
+<text class="margin-xs text-red " style="display:inline-block;width:60rpx;">{{item.collectNum}}</text>
+<text class="cuIcon-message text-orange" style="font-size: 45rpx;"></text>
+<text class="margin-xs text-orange " style="display:inline-block;width:60rpx;">{{item.commentNum}}</text>
+</view>
+</view>
+</view>

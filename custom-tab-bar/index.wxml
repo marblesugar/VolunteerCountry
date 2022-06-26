@@ -1,0 +1,21 @@
+<!--custom-tab-bar/index.wxml-->
+<view class="box">
+	<view class="cu-bar tabbar">
+		<!-- <view class="action {{selected === 0 ? 'active' : 'default'}}" data-index="0" bindtap="switchTab">
+			<view class="cuIcon-home"></view> 首页
+		</view> -->
+		<view class="action {{selected === 0 ? 'active' : 'default'}}" data-index="0" bindtap="switchTab">
+			<view class="cuIcon-discover"></view> 志愿项目
+		</view>
+
+		<view class="action {{selected ===1 ? 'active' : 'default'}}" data-index="1" bindtap="switchTab">
+			<view class="cuIcon-new"></view>讨论社区
+		</view>
+
+		<view class="action {{selected === 2 ? 'active' : 'default'}}" data-index="2" bindtap="switchTab">
+			<view class="cuIcon-my"></view>个人信息
+		</view>
+		
+	</view>
+</view>
+

@@ -1,0 +1,15 @@
+/* pages/about/about.wxss */
+.body{
+    border:1px solid white;
+    background-color: white;
+    display: absolute;
+    top:0;
+    width: 100%;
+}
+.footer{
+    line-height: 60rpx;
+    margin-top: 400rpx;
+    margin-bottom: 40rpx;
+    text-align: center;
+    color: #066FBC ;
+}

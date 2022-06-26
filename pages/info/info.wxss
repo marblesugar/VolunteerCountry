@@ -1,0 +1,37 @@
+/* pages/info/info.wxss */
+.header{
+    display: absolute;
+    z-index:1;
+    letter-spacing:2rpx;
+    background-color: #F06565;
+    height: 130rpx;
+    width:100%;
+    top:0;
+}
+.cu-avatar{
+    display: absolute;
+    z-index: 2;
+    top:-100rpx;
+    left:68%;
+    width: 180rpx;
+    height: 180rpx;
+
+}
+.catch{
+    width: 180rpx;
+    height: 180rpx;
+    background-color: rgb(0,0,0,0.2);
+    text-align: center;
+    color:rgb(252, 252, 252,0.7);
+    padding-top: 40%;
+}
+input{
+    height:90rpx;
+}
+.body{
+    margin-top: -210rpx;
+    background-color: white;
+}
+
+
+

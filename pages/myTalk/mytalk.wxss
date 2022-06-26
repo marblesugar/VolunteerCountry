@@ -1,0 +1,10 @@
+/* pages/mytalk/mytalk.wxss */
+#content{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    word-break: break-all;      /* 注意这个文字多行很重要 */
+    -webkit-box-orient: vertical;
+    margin-bottom: 40rpx;
+}
