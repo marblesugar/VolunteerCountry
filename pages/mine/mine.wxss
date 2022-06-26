@@ -1,15 +1,12 @@
 /* pages/mine/mine.wxss */
-page{
-
-    background-color: white;
-}
 .background{
     height: 1500rpx;
     width: 100%;
     position: absolute;
     z-index: -2;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     background-color: white;
+    margin-bottom: 150rpx;
 }
 .back {
     position: absolute;
@@ -36,6 +33,6 @@ page{
 .footer{
     position:absolute;
     z-index:0;
-    top:1200rpx;
+    top:1300rpx;
     left:0;
 }

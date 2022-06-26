@@ -1,46 +1,47 @@
 <!--pages/mine/mine.wxml-->
 <view class="background">
 </view>
-    <view class="back">
-<text class="cuIcon-settings text-white " style="font-size: 50rpx;margin-left:80%;"></text>
-<text class="cuIcon-new text-white margin" style="font-size: 50rpx;" bindtap="toMymessage"></text>
+<view class="back">
+    <text class="cuIcon-new text-white margin" style="font-size: 50rpx;margin-left: 90%;" bindtap="toMymessage"></text>
 </view>
 <view class="body padding">
 
-<view class="text-center margin">
-<view class="cu-avatar round margin" style="background-image:url({{avatar}});width: 150rpx;height: 150rpx;"></view>
-<view class="text-lg text-bold padding">{{name}}</view>
-</view>
+    <view class="text-center margin">
+        <view class="cu-avatar round margin" style="background-image:url({{avatar}});width: 150rpx;height: 150rpx;"></view>
+        <view class="text-lg text-bold padding">{{name}}</view>
+    </view>
 
-<view class="grid col-1 margin-left padding align-center"  bindtap="toInfo">
-<text class="cuIcon-edit radius padding-xs" style="font-size: 80rpx;background-color:#EDEAF4;color: #7468BE;"></text>
-<text class="text-lg" style="margin-left: 8%;">个人信息</text>
-<text class="cuIcon-right margin" style="margin-left:33%;font-size: 40rpx;"></text>
-</view>
+    <view class="grid col-1 margin-left-xs padding align-center" bindtap="toInfo">
+        <text class="cuIcon-edit radius padding-xs" style="font-size: 70rpx;background-color:#EDEAF4;color: #7468BE;"></text>
+        <text class="text-lg" style="margin-left: 8%;">个人信息</text>
+        <text class="cuIcon-right margin-xs" style="margin-left:40%;font-size: 40rpx;"></text>
+    </view>
 
-<view class="grid col-1 margin-left padding align-center"  bindtap="toMytalk">
-<text class="cuIcon-comment radius padding-xs" style="font-size: 80rpx;background-color:#E6F7FF;color: #40A9FF;"></text>
-<text class="text-lg" style="margin-left: 8%;">我的帖子</text>
-<text class="cuIcon-right margin" style="margin-left:33%;font-size: 40rpx;"></text>
-</view>
+    <view class="grid col-1 margin-left-xs padding align-center" bindtap="toServelog">
+        <text class="cuIcon-time radius padding-xs" style="font-size: 70rpx;background-color:#DEFCDC;color: #26D35A;"></text>
+        <text class="text-lg" style="margin-left: 8%;">服务记录</text>
+        <text class="cuIcon-right margin-xs" style="margin-left:40%;font-size: 40rpx;"></text>
+    </view>
 
-<view class="grid col-1 margin-left padding align-center"  id="function3">
-<text class="cuIcon-fork radius padding-xs" style="font-size: 80rpx;background-color:#FFF7E6;color: #FA8C16;"></text>
-<text class="text-lg" style="margin-left: 8%;">分享好友</text>
-<text class="cuIcon-right margin" style="margin-left:33%;font-size: 40rpx;"></text>
-</view>
+    <view class="grid col-1 margin-left-xs padding align-center" bindtap="toPrivatetalk">
+        <text class="cuIcon-message radius padding-xs" style="font-size: 70rpx;background-color:#FFF7E6;color: #FA8C16;"></text>
+        <text class="text-lg" style="margin-left: 8%;">我的私聊</text>
+        <text class="cuIcon-right margin-xs" style="margin-left:40%;font-size: 40rpx;"></text>
+    </view>
 
-<view class="grid col-1 margin-left padding align-center"  bindtap="toAbout">
-<text class="cuIcon-question radius padding-xs" style="font-size: 80rpx;background-color:#E6FFFB;color: #13C2C2;"></text>
-<text class="text-lg" style="margin-left: 8%;">关于我们</text>
-<text class="cuIcon-right margin" style="margin-left:33%;font-size: 40rpx;"></text>
-</view>
+    <view class="grid col-1 margin-left-xs padding align-center" bindtap="toMytalk">
+        <text class="cuIcon-comment radius padding-xs" style="font-size: 70rpx;background-color:#E6F7FF;color: #40A9FF;"></text>
+        <text class="text-lg" style="margin-left: 8%;">我的帖子</text>
+        <text class="cuIcon-right margin-xs" style="margin-left:40%;font-size: 40rpx;"></text>
+    </view>
+
+    <view class="grid col-1 margin-left-xs padding align-center" bindtap="toAbout">
+        <text class="cuIcon-question radius padding-xs" style="font-size: 70rpx;background-color:#E6FFFB;color: #13C2C2;"></text>
+        <text class="text-lg" style="margin-left: 8%;">关于我们</text>
+        <text class="cuIcon-right margin-xs" style="margin-left:40%;font-size: 40rpx;"></text>
+    </view>
 
 </view>
 <view class="footer">
-<button class="cu-btn margin"style="margin-left:55%;" bindtap="exit">退出</button>
+    <button class="cu-btn margin" style="margin-left:55%;" bindtap="exit">退出</button>
 </view>
-
-
-
-

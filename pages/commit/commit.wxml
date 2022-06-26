@@ -1,0 +1,20 @@
+<!--pages/commit/commit.wxml-->
+<view class="bg-white" >
+    <form action="">
+
+        <button class="cu-btn bg-white" form-type="reset" style="width:150rpx;margin-left:5%;">取消</button>
+        <button class="cu-btn bg-red" form-type="submit" style="width:150rpx;margin-left: 50%;">发布</button>
+
+        <view class="cu-form-group margin-top margin">
+            <textarea maxlength="-1" auto-height="100" bindinput="textareaAInput" placeholder="这一刻的想法···"></textarea>
+        </view>
+
+        <view class="cu-form-group">
+            <text class="cuIcon-locationfill text-orange"></text>
+            <view class="title margin-left">收货地址</view>
+            <input placeholder=""></input>
+            
+        </view>
+    </form>
+
+</view>

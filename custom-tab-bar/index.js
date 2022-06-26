@@ -11,17 +11,25 @@ Component({
         //   "text": "首页",
         // },
         {
-          "pagePath": "pages/activitylist/activitylist",
-          "text": "志愿项目"
-        },
-        {
-          "pagePath": "pages/talklist/talklist",
-          "text": "讨论社区"
-        },
-        {
+          "pagePath": "pages/activityList/activityList",
+          "text": "项目"
+      },
+      {
+          "pagePath": "pages/talkList/talkList",
+          "text": "讨论"
+      },
+      {
+          "pagePath": "pages/commit/commit",
+          "text": "发布"
+      },
+      {
+          "pagePath": "pages/publisher/publisher",
+          "text": "管理"
+      },
+      {
           "pagePath": "pages/mine/mine",
-          "text": "个人信息"
-        }
+          "text": "我的"
+      }
       ]
     },
     methods: {

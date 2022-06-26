@@ -1,17 +1,21 @@
 {
     "pages": [
-   
+        "pages/mine/mine",
         "pages/index/index",
         "pages/register/regitster",
-        "pages/activitylist/activitylist",
-        "pages/activityinfo/activityinfo",
-        "pages/talklist/talklist",
-        "pages/talkinfo/talkinfo",
-        "pages/mine/mine",
+        "pages/activityList/activityList",
+        "pages/activityInfo/activityInfo",
+        "pages/talkList/talkList",
+        "pages/talkInfo/talkInfo",
+        "pages/commit/commit",
+  
         "pages/info/info",
-        "pages/mytalk/mytalk",
+        "pages/myTalk/myTalk",
         "pages/about/about",
-        "pages/mymessage/mymessage",
+        "pages/myMessage/myMessage",
+        "pages/serveLog/serveLog",
+        "pages/privateTalk/privateTalk",
+        "pages/publisher/publisher",
         "pages/test/test",
         "pages/logs/logs"
     ],
@@ -29,16 +33,24 @@
         "borderStyle": "black",
         "list": [
             {
-                "pagePath": "pages/activitylist/activitylist",
-                "text": "志愿项目"
+                "pagePath": "pages/activityList/activityList",
+                "text": "项目"
             },
             {
-                "pagePath": "pages/talklist/talklist",
-                "text": "讨论社区"
+                "pagePath": "pages/talkList/talkList",
+                "text": "讨论"
+            },
+            {
+                "pagePath": "pages/commit/commit",
+                "text": "发布"
+            },
+            {
+                "pagePath": "pages/publisher/publisher",
+                "text": "管理"
             },
             {
                 "pagePath": "pages/mine/mine",
-                "text": "个人信息"
+                "text": "我的"
             }
         ]
     },

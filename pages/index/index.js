@@ -16,7 +16,7 @@ wx.navigateTo({
 },
 login(e){
 wx.switchTab({
-  url: '/pages/activitylist/activitylist',
+  url: '/pages/activityList/activityList',
 })
 },
 
