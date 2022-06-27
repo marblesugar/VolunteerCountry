@@ -1,4 +1,0 @@
-/* pages/activitylist/activitylist.wxss */
-.content{
-    margin-left:80rpx ;
-}

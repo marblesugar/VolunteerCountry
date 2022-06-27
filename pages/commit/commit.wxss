@@ -1,4 +1,0 @@
-/* pages/commit/commit.wxss */
-page{
-    background-color: white;
-}
