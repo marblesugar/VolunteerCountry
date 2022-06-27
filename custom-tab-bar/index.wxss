@@ -1,0 +1,17 @@
+/* custom-tab-bar/index.wxss */
+@import "../colorui/main.wxss";
+@import "../colorui/icon.wxss";
+.tabbar{
+  background-color: #ffffff;
+}
+.bg-cyan{
+  background-color: #cce6ff;
+}
+.active{
+  /* color: #0081ff; */
+  color:#E50F0F;
+}
+.default{
+  color:rgb(51, 24, 24);
+}
+

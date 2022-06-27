@@ -1,0 +1,23 @@
+<!--pages/talkinfo/talkinfo.wxml-->
+<view class="back">
+<text class="cuIcon-deletefill text-white" style="margin-left: 90%;font-size: 33rpx;"></text>
+</view>
+<view class="body">
+<view class="style1" id="time">{{time}}</view>
+<view class="style1" id="content">{{content}}</view>
+<view class="style1 solids-top padding" id="btn" style="border-left:0rpx solid white;">
+<text class="cuIcon-we" style="font-size: 50rpx;" wx:if="{{isCollect==0}}"></text>
+<text class="cuIcon-wefill text-red" style="font-size: 50rpx;" wx:if="{{isCollect==1}}"></text> 收藏
+<text class="cuIcon-message" style="margin-left:55%;font-size: 50rpx;"></text> 评论
+</view>
+<view class="style1 cuIcon-wefill text-red" id="collectRow" style="border-left:4rpx solid  #F74D4D;">
+    陈奕迅，王祖蓝，郑多多，媛媛，小唐老师等101个人收藏了
+</view>
+<view class="style1" id="commentRow" style="border-left:4rpx solid  #F74D4D;">
+<view class="cu-list" wx:for="{{comment_list}}" wx:key>
+<text class="text-bold">{{item.commentor_name}}</text>
+<text wx:if="{{item.user_name!=''}}">回复 <text class="text-bold">{{item.user_name}}</text></text>
+：{{item.content}}
+</view>
+</view>
+</view>
