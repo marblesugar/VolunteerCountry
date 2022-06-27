@@ -9,16 +9,16 @@ Page({
   data: {
 
   },
-register(e){
-wx.navigateTo({
-  url: '/pages/register/regitster',
-})
-},
-login(e){
-wx.switchTab({
-  url: '/pages/activityList/activityList',
-})
-},
+  register(e) {
+    wx.navigateTo({
+      url: '/pages/register/regitster',
+    })
+  },
+  login(e) {
+    wx.switchTab({
+      url: '/pages/activityList/activityList',
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载

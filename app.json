@@ -1,60 +1,58 @@
 {
-    "pages": [
-        "pages/mine/mine",
-        "pages/index/index",
-        "pages/register/regitster",
-        "pages/activityList/activityList",
-        "pages/activityInfo/activityInfo",
-        "pages/talkList/talkList",
-        "pages/talkInfo/talkInfo",
-        "pages/commit/commit",
-  
-        "pages/info/info",
-        "pages/myTalk/myTalk",
-        "pages/about/about",
-        "pages/myMessage/myMessage",
-        "pages/serveLog/serveLog",
-        "pages/privateTalk/privateTalk",
-        "pages/publisher/publisher",
-        "pages/test/test",
-        "pages/logs/logs"
-    ],
-    "window": {
-        "backgroundTextStyle": "dark",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "志愿乡村",
-        "navigationBarTextStyle": "black"
-    },
-    "tabBar": {
-        "custom": true,
-        "backgroundColor": "#ffffff",
-        "color": "#999999",
-        "selectedColor": "#545454",
-        "borderStyle": "black",
-        "list": [
-            {
-                "pagePath": "pages/activityList/activityList",
-                "text": "项目"
-            },
-            {
-                "pagePath": "pages/talkList/talkList",
-                "text": "讨论"
-            },
-            {
-                "pagePath": "pages/commit/commit",
-                "text": "发布"
-            },
-            {
-                "pagePath": "pages/publisher/publisher",
-                "text": "管理"
-            },
-            {
-                "pagePath": "pages/mine/mine",
-                "text": "我的"
-            }
-        ]
-    },
-
-    "style": "v2",
-    "sitemapLocation": "sitemap.json"
+  "pages": [
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/register/regitster",
+    "pages/activityList/activityList",
+    "pages/activityInfo/activityInfo",
+    "pages/talkList/talkList",
+    "pages/talkInfo/talkInfo",
+    "pages/commit/commit",
+    "pages/info/info",
+    "pages/myTalk/myTalk",
+    "pages/about/about",
+    "pages/myMessage/myMessage",
+    "pages/serveLog/serveLog",
+    "pages/privateTalk/privateTalk",
+    "pages/publisher/publisher",
+    "pages/test/test",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "志愿乡村",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": true,
+    "backgroundColor": "#ffffff",
+    "color": "#999999",
+    "selectedColor": "#545454",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/activityList/activityList",
+        "text": "项目"
+      },
+      {
+        "pagePath": "pages/talkList/talkList",
+        "text": "讨论"
+      },
+      {
+        "pagePath": "pages/commit/commit",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/publisher/publisher",
+        "text": "管理"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
 }
