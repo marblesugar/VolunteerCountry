@@ -23,7 +23,7 @@ Page({
   },
   toMytalk(e) {
     wx.navigateTo({
-      url: '/pages/mytalk/mytalk',
+      url: '/pages/myTalk/myTalk',
     })
   },
   toAbout(e) {
