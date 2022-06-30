@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "backgroundTextStyle":"dark",
+  "navigationBarBackgroundColor": "#F06565",
+  "navigationBarTitleText": "我的私聊",
+  "navigationBarTextStyle":"white"
 }

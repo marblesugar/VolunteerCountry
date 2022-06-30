@@ -7,7 +7,7 @@
     <view class="text-white">发的帖子全在这里哦~</view>
 </view>
 </view>
-<view class="cu-list margin" wx:for="{{list}}" wx:key bindtap="toSomeone">
+<view class="cu-list margin" wx:for="{{list}}" wx:key bindtap="toSomeone" data-id="{{index}}">
 <view class="cu-item bg-white padding radius shadow" style="border-left: 10rpx solid #F74D4D;">
 <view class="text-black" id="content">{{item.content}}</view>
 <view >

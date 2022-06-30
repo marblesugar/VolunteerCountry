@@ -1,4 +1,5 @@
 // pages/mine/mine.js
+var app=getApp();
 Page({
 
   /**
@@ -7,15 +8,52 @@ Page({
   data: {
     avatar: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big81020.jpg',
     name: '凯尔',
+    grade:'67.8%',
   },
-  exit(e) { //退出
-    //全局变量userid设为空
-    //跳转登录页面
-    //后端交互？
-    wx.reLaunch({
-      url: '/pages/index/index',
+  logOut(e){
+    wx.showModal({
+      title:'提示',
+      content:'确定退出？',
+      success (res) {
+        if (res.confirm) {
+          console.log('用户点击确定');
+          var that = this;
+          //与服务器交互
+          wx.request({
+            url: 'https://chenmoc.com/vt/logout.php',
+            method: "POST",
+            data: {
+              phone:app.globalData.phone,
+              role:app.globalData.role
+            },
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
+            },
+            success(res) {
+              console.log(res.data);
+              if (res.data.status == -1) {
+                wx.showModal({
+                  title: '提示',
+                  content: res.data.msg,
+                  showCancel: false,
+                  success(res) {}
+                })
+              } else { //status==1退出成功
+                console.log(res.data);
+                wx.reLaunch({
+                  url: '/pages/index/index',
+                })
+              }
+            },
+           
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
     })
   },
+
   toInfo(e) {
     wx.navigateTo({
       url: '/pages/info/info',
@@ -33,7 +71,7 @@ Page({
   },
   toMymessage(e) {
     wx.navigateTo({
-      url: '/pages/mymessage/mymessage',
+      url: '/pages/myMessage/myMessage',
     })
   },
   toServelog(e) {
@@ -51,7 +89,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that = this;
+    setTimeout(function() {
+      that.setData({
+        loading: true
+      })
+    }, 500)
   },
 
   /**
@@ -72,6 +115,7 @@ Page({
    */
   onShow: function () {
     this.tabBar();
+    
   },
 
   /**

@@ -1,2 +1,20 @@
 <!--pages/privateTalk/privateLog.wxml-->
-<text>pages/privateTalk/privateLog.wxml</text>
+<view class="cu-list menu-avatar ">
+    <view class="cu-item "wx:for="{{list}}" wx:key data-id="{{index}}" bindtap="toSomeone">
+      <view class="cu-avatar round lg" style="background-image:url({{item.avatar}});"></view>
+      <view class="content">
+        <view class="text-black">
+          <text class="text-cut">{{item.name}}</text>
+        </view>
+        <view class="text-gray text-sm flex">
+          <text class="text-cut">{{item.content}}</text>
+        </view>
+      </view>
+      <view class="action">
+        <view class="text-grey text-xs">{{item.time}}</view>
+        <view class="cu-tag round bg-red sm" wx:if="{{!item.noread==0}}">{{item.noread}}</view>
+      </view>
+    </view>
+  </view>
+
+  

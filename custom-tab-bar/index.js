@@ -1,5 +1,8 @@
 // custom-tab-bar/index.js
 Component({
+  options: {
+    addGlobalClass: true,
+  },
     properties: {
   
     },

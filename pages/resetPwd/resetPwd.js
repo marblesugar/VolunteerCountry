@@ -1,34 +1,33 @@
-// index.js
+// pages/resetPwd/resetPwd.js
 var app = getApp();
 var userPhone = '';
 var userPassword = '';
+var userAPassword='';
 var userRole = '0';
 var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(19[0-9]{1}|(18[0-9]{1})))+\d{8})$/;
-// 获得openid->后台对比->对比有，则跳转at
-//                     ->对比无，则login(e)
 Page({
+
   /**
    * 页面的初始数据
    */
-  data: {},
-  inputPhone(e) {
-    // console.log(e.detail.value);
+  data: {
+
+  },
+
+  inputPhone(e){
+    console.log(e.detail.value);
     userPhone = e.detail.value;
   },
-  inputPassword(e) {
+
+  inputPassword(e){
+    console.log(e.detail.value);
     userPassword = e.detail.value;
   },
-  register(e) {
-    wx.navigateTo({
-      url: '/pages/register/regitster',
-    })
+  inputAPassword(e){
+    console.log(e.detail.value);
+    userAPassword = e.detail.value;
   },
-  resetPwd(e) {
-    wx.navigateTo({
-      url: '/pages/resetPwd/resetPwd',
-    })
-  },
-  login(e) {
+reset(e){
     //后端登录接口
     var that = this;
     if (userPhone == '' && userPassword == '') {
@@ -55,13 +54,21 @@ Page({
         content: '手机号输的格式有问题哎',
         showCancel: false
       })
+    }else if(userAPassword!=userPassword){
+      
+        wx.showModal({
+          title:'提示',
+          content:'第二次输入密码与第一次不同',
+          showCancel:false
+        })
+      
     } else {
       wx.login({
         success(res) {
           console.log(userPhone);
           console.log(userPassword);
           wx.request({
-            url: 'https://chenmoc.com/vt/login.php',
+            url: 'https://chenmoc.com/vt/reset.php',
             method: 'POST',
             data: {
               pn: userPhone,
@@ -86,52 +93,67 @@ Page({
                 wx.switchTab({
                   url: '/pages/activityList/activityList',
                 })
-              } else if (res.data.status == 2) {
-                wx.showModal({
-                  title: '提示',
-                  content: '密码输入不正确',
-                  showCancel: false
-                })
               }
             }
           })
         }
       })
     }
-  },
-
+  
+},
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    var that = this;
-    wx.login({
-      success(res) {
-        console.log(res.code);
-        wx.request({
-          url: 'https://chenmoc.com/vt/autologin.php',
-          method: 'POST',
-          data: {
-            temp_code: res.code
-          },
-          header: {
-            'content-type': "application/x-www-form-urlencoded"
-          },
-          success: function (res) {
-            console.log(res.data);
-            app.globalData.openid = res.data.auth.openid;
-            app.globalData.role = res.data.role;
-            if (res.data.status == 1) {
-              app.globalData.phone = res.data.mess[0].pn;
-              app.globalData.password = res.data.mess[0].pw;
-              console.log(app.globalData);
-              wx.switchTab({
-                url: '../activityList/activityList',
-              })
-            }
-          }
-        })
-      }
-    })
+  onLoad(options) {
+
   },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload() {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh() {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom() {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage() {
+
+  }
 })

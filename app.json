@@ -3,6 +3,7 @@
 
         "pages/index/index",
         "pages/register/regitster",
+        "pages/resetPwd/resetPwd",
         "pages/activityList/activityList",
         "pages/activityInfo/activityInfo",
         "pages/talkList/talkList",
@@ -15,6 +16,7 @@
         "pages/myMessage/myMessage",
         "pages/serveLog/serveLog",
         "pages/privateTalk/privateTalk",
+        "pages/oneTalk/oneTalk",
         "pages/publisher/publisher",
         "pages/test/test",
         "pages/logs/logs"
@@ -54,7 +56,6 @@
             }
         ]
     },
-
     "style": "v2",
     "sitemapLocation": "sitemap.json"
 }

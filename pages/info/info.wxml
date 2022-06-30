@@ -7,22 +7,27 @@
 <form action="">
     <view class="cu-form-group margin-top grid col-1 margin-left margin-right radius ">
         <view class="title margin-left margin-top" style="color:{{color[0]==0?'black':'#E81010'}}">名称</view>
-        <input class="margin-left margin-bottom  margin-right" placeholder="{{name}}" placeholder-style="color:black;" bindtap="nameInput" style="color:{{color[0]==0?'black':'#E81010'}};border-bottom:1.5px solid {{color[0]==0?'lightgrey':'#E81010'}}"></input>
+        <input class="margin-left margin-bottom  margin-right" placeholder="{{name}}" placeholder-style="color:black;" bindtap="nameChange" bindinput="nameInput" style="color:{{color[0]==0?'black':'#E81010'}};border-bottom:1.5px solid {{color[0]==0?'lightgrey':'#E81010'}}"></input>
+    </view>
+
+    <view class="cu-form-group grid col-1 margin-left margin-right radius ">
+        <view class="title margin-left margin-top" style="color:{{color[6]==0?'black':'#E81010'}}">姓名</view>
+        <input class="margin-left margin-bottom  margin-right" placeholder="{{true_name}}" placeholder-style="color:black;" bindtap="truenameChange" bindinput="truenameInput"  style="color:{{color[6]==0?'black':'#E81010'}};border-bottom:1.5px solid {{color[6]==0?'lightgrey':'#E81010'}}"></input>
     </view>
 
     <view class="cu-form-group margin-left margin-right grid col-1 radius">
         <view class="title margin-left margin-top">身份(不可修改)</view>
-        <input class="margin-left margin-bottom  margin-right solids-bottom" placeholder="{{role}}" placeholder-style="color:black;" disabled="disabled"></input>
+        <input class="margin-left margin-bottom  margin-right solids-bottom" placeholder="{{role==0?'志愿者':'发布者'}}" placeholder-style="color:black;" disabled="disabled"></input>
     </view>
 
-    <view class="cu-form-group grid col-1 margin-left margin-right radius" style="color:{{color[4]==0?'black':'#E81010'}}">
-        <view class="title margin-left margin-top">电话</view>
-        <input class="margin-left margin-bottom  margin-right" placeholder="{{phone}}" placeholder-style="color:black;" bindtap="phoneInput" style="color:{{color[4]==0?'black':'#E81010'}};border-bottom:1.5px solid {{color[4]==0?'lightgrey':'#E81010'}}"></input>
+    <view class="cu-form-group grid col-1 margin-left margin-right radius">
+        <view class="title margin-left margin-top">电话(不可修改)</view>
+        <input class="margin-left margin-bottom  margin-right" placeholder="{{phone}}" placeholder-style="color:black;" disabled="disabled" ></input>
     </view>
 
     <view class="cu-form-group grid col-1 margin-left margin-right radius" style="color:{{color[5]==0?'black':'#E81010'}}">
         <view class="title margin-left margin-top">邮箱</view>
-        <input class="margin-left margin-bottom  margin-right" placeholder="{{email}}" placeholder-style="color:black;" bindtap="emailInput" style="color:{{color[5]==0?'black':'#E81010'}};border-bottom:1.5px solid {{color[5]==0?'lightgrey':'#E81010'}}"></input>
+        <input class="margin-left margin-bottom  margin-right" placeholder="{{email}}" placeholder-style="color:black;"  bindtap="emailChange" bindinput="emailInput"  style="color:{{color[5]==0?'black':'#E81010'}};border-bottom:1.5px solid {{color[5]==0?'lightgrey':'#E81010'}}"></input>
     </view>
 
     <view class="cu-form-group margin-left margin-right margin-top radius" style="color:{{color[1]==0?'black':'#E81010'}};border-bottom:1.5px solid {{color[1]==0?'lightgrey':'#E81010'}}">
@@ -51,8 +56,12 @@
             </view>
         </picker>
     </view>
+<view class="flex"> 
+<button class="cu-btn bg-gray text-bold " style="margin-left: 10%; margin-top: 80rpx; margin-bottom: 100rpx;"
+bindtap="signOut">注销</button>
+<button class="cu-btn bg-red text-white text-bold " style="margin-left: 18%; margin-top: 80rpx; margin-bottom: 100rpx;margin-right: 10%;" bindtap="save">保存</button>
+</view>
 
-<button class="cu-btn bg-red text-white text-bold " style="margin-left: 25%; margin-top: 100rpx; margin-bottom: 50rpx;">保存</button>
 
 </form>
 

@@ -6,8 +6,15 @@
 </view>
 <view class="body padding">
 
-    <view class="text-center margin">
-        <view class="cu-avatar round margin" style="background-image:url({{avatar}});width: 150rpx;height: 150rpx;"></view>
+    <view class="text-center margin-top margin-left margin-right">
+        <view class="cu-avatar round" style="background-image:url({{avatar}});width: 150rpx;height: 150rpx;"></view>
+        <view class="margin-top-xs">
+            <text class="cuIcon-likefill text-red margin-right-xs"></text>
+            <view class="cu-progress round margin-top xs" style="width: 100rpx;">
+                <view class="bg-red" style="width:{{grade}}; "></view>
+            </view>
+            <text class="text-xs margin-left-xs">{{grade}}</text>
+        </view>
         <view class="text-lg text-bold padding">{{name}}</view>
     </view>
 
@@ -43,5 +50,5 @@
 
 </view>
 <view class="footer">
-    <button class="cu-btn margin" style="margin-left:55%;" bindtap="exit">退出</button>
+    <button class="cu-btn margin" style="margin-left:55%;" bindtap="logOut">退出</button>
 </view>

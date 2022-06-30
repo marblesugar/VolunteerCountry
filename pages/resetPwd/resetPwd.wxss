@@ -1,4 +1,4 @@
-/**index.wxss**/
+/* pages/resetPwd/resetPwd.wxss */
 .body{
   width: 100%;
   background-color: white;
@@ -25,17 +25,10 @@
   background-color: rgb(255,255,255,0.8);
   border-radius: 20px;
   box-shadow:0rpx 5rpx 10rpx 4rpx rgb(0,0,0,0.3);
-  animation: name duration timing-function delay iteration-count direction fill-mode;
-  animation:fadenum 3s 1;
-
-}
-@keyframes fadenum{
-   0%{opacity: 0;}
-   100%{opacity: 1;}
 }
 
 #title{
-  margin-left: 25%;
+  margin-left: 38%;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 1000;
   font-size: 35rpx;
@@ -45,6 +38,9 @@
 width: 90%;margin-left: 5%; box-shadow:0rpx 5rpx 10rpx 4rpx rgb(0,0,0,0.2);
 }
 #input2{
+margin-top: 40rpx;width: 90%;margin-left: 5%; box-shadow:0rpx 5rpx 10rpx 4rpx rgb(0,0,0,0.2);
+}
+#input3{
 margin-top: 40rpx;width: 90%;margin-left: 5%; box-shadow:0rpx 5rpx 10rpx 4rpx rgb(0,0,0,0.2);
 }
 #btn{

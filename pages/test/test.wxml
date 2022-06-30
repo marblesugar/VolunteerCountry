@@ -1,16 +1,12 @@
 <!--pages/test/test.wxml-->
-<text>pages/test/test.wxml</text>
-
-    <button class="cu-btn bg-green shadow" bindtap="showModal" data-target="DrawerModalL">Left</button>
-    
-<view class="cu-modal drawer-modal justify-start {{modalName=='DrawerModalL'?'show':''}}" bindtap="hideModal">
-  <view class="cu-dialog basis-lg" catchtap style="top:{{CustomBar}}px;height:calc(100vh - {{CustomBar}}px)">
-    <view class="cu-list menu text-left">
-      <view class="cu-item arrow" wx:for="{{5}}" wx:key>
-        <view class="content">
-          <view>Item {{index +1}}</view>
-        </view>
-      </view>
-    </view>
+<view class="padding bg-white">
+  <!-- <view class="cu-progress round">
+    <view class="bg-red" style="width:{{loading?'61.8%':''}};"></view>
+  </view> -->
+  <!-- <view class="cu-progress round margin-top sm">
+    <view class="bg-red" style="width:{{loading?'61.8%':''}};"></view>
+  </view> -->
+  <view class="cu-progress round margin-top xs">
+    <view class="bg-red" style="width:{{loading?'61.8%':''}};"></view>
   </view>
 </view>

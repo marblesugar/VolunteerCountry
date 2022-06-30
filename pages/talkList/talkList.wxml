@@ -3,7 +3,7 @@
 <view class="body">
     <view class="cu-list" wx:for="{{list}}" wx:key bindtap="toSomeone" data-id="{{index}}">
         <view class="cu-item bg-white padding-xs radius shadow">
-            <view class="flex margin-xs padding-sm solids-bottom">
+            <view class="flex margin-xs padding-sm solids-bottom"> 
                 <view class="cu-avatar round lg" style="background-image:url({{item.avatar}});"></view>
                 <view class="grid col-1 ">
                     <view class="text-grey margin-left">{{item.name}}</view>

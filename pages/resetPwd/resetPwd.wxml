@@ -1,0 +1,21 @@
+<!--pages/resetPwd/resetPwd.wxml-->
+<view class="body">
+  <image class='img1' src="/image/Milestones of business projects.gif" mode="top"></image>
+  <image class="img2" src="/image/Group-amico.png" mode="aspectFill"></image>
+  <view id="form1">
+    <text id="title">重设密码</text>
+    <form action="">
+      <view class="cu-form-group round" id="input1">
+        <input type="text" placeholder="请输入手机号" bindinput="inputPhone"></input>
+      </view>
+      <view class="cu-form-group solids-bottom round shadow" id="input2">
+        <input type="password" placeholder="请输入新密码"  bindinput="inputPassword"></input>
+      </view> 
+      <view class="cu-form-group solids-bottom round shadow" id="input3">
+        <input type="password" id="pwd2" placeholder="请再次输入新密码" bindinput="inputAPassword"></input>
+      </view>
+      <button class="bg-red round shadow-blur" form-type="submit" bindtap="reset" id="btn">确定</button>
+    </form>
+  </view>
+
+</view>

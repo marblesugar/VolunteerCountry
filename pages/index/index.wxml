@@ -1,23 +1,27 @@
 <!--index.wxml-->
-<view class="body" bindtap="toggle">
-<image class='img1' src="/image/Milestones of business projects.gif" mode="top"></image>
-<image class="img2"src="/image/Group-amico.png" mode="aspectFill"></image>
-<view id="form1">
-<text id="title">欢迎来到志愿乡村</text>
-<form action="">
-  <view class="cu-form-group solids-bottom round shadow" style="width: 90%;margin-left: 5%; box-shadow:0rpx 5rpx 10rpx 4rpx rgb(0,0,0,0.2);">	
-				<input type="text" id="phone_number" placeholder="请输入账号" placeholder-placeholder-holder="plas" bindinput="accInput"></input>
-			</view>
-      <view  class="margin text-right" bindtap="register">没有账号？</view>
-        <view class="cu-form-group solids-bottom round shadow" style="margin-top: 40rpx;width: 90%;margin-left: 5%; box-shadow:0rpx 5rpx 10rpx 4rpx rgb(0,0,0,0.2);">
-				<input type="password" id="pwd" placeholder="请输入密码" placeholder-holder="plas" bindinput="pwdInput"></input>
-			</view>
-      <view  class="margin text-right">忘记密码？</view>
-		<button class="bg-red round shadow-blur" form-type="submit" style="margin-top:60rpx;margin-bottom:40rpx;box-shadow:3rpx 2rpx 9rpx 4rpx#FF6347;" bindtap="login">登录</button>
-</form>
-</view>
-<view class="footer">
-<text class="cuIcon-weixin text-gray lg" style="font-size: 50rpx;"></text>
-</view>
+<view class="body">
+  <!-- 背景图片 -->
+  <image class='img1' src="/image/Milestones of business projects.gif" mode="top"></image>
+  <image class="img2" src="/image/Group-amico.png" mode="aspectFill"></image>
 
+  <!-- 表单 -->
+  <view id="form1">
+    <text id="title">欢迎来到志愿乡村</text>
+
+    <form action="">
+
+      <view class="cu-form-group  round" id="input1">
+        <input type="text" name="account" placeholder="请输入手机号" bindinput="inputPhone"></input>
+      </view>
+      <view class="margin text-right" bindtap="register">没有注册？</view>
+
+      <view class="cu-form-group round" id="input2">
+        <input type="password" name="pwd" placeholder="请输入密码" bindinput="inputPassword"></input>
+      </view>
+      <view class="margin text-right" bindtap="resetPwd">忘记密码？</view>
+      
+      <button class="bg-red round" form-type="submit" bindtap="login" id="btn">登录</button>
+    </form>
+
+  </view>
 </view>

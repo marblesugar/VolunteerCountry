@@ -1,1 +1,16 @@
 /* pages/publisher/publisher.wxss */
+.content{
+    margin-left:80rpx ;
+}
+.body{
+    padding-bottom: 150rpx;
+    margin-bottom: 150rpx;
+}
+.sty{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  word-break: break-all;      /* 注意这个文字多行很重要 */
+  -webkit-box-orient: vertical;
+}

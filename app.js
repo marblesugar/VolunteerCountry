@@ -14,6 +14,9 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    phone: '',
+    password: '',
+    role: '',
+    openid: '',
   }
 })

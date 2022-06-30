@@ -1,2 +1,164 @@
 <!--pages/publisher/publisher.wxml-->
-<text>pages/publisher/publisher.wxml</text>
+
+
+<view class="body bg-white" wx:if="{{role==1}}">
+  <scroll-view scroll-x class="bg-white nav padding text-center">
+    <view class="cu-item {{index==TabCur?'text-blue cur':''}} " wx:for="{{list}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}" style="margin-right:80rpx;margin-left:80rpx;">
+      {{item}}
+    </view>
+  </scroll-view>
+
+  <block wx:if="{{TabCur==0}}">
+    <view class="cu-bar search bg-white">
+      <view class="cuIcon-sort margin" bindtap="showModal" data-target="DrawerModalL" style="font-size: 40rpx;"></view>
+      <view class="search-form round">
+        <text class="cuIcon-search"></text>
+        <input type="text" placeholder="输入关键词搜索" bindinput="Input"></input>
+      </view>
+      <view class="action">
+        <text class="cu-btn bg-red shadow-blur round" bindtap="search">搜索</text>
+      </view>
+    </view>
+
+    <view class="cu-list menu-avatar" style="margin-bottom: 140rpx;">
+
+      <view class="cu-item margin-sm radius" bindtap="toSomeone" data-id="{{item.id}}" wx:for="{{list2}}" wx:key="index4" style="height: 200rpx;box-shadow: 0 7rpx 8rpx 4rpx rgb(0, 0,0,0.1);">
+        <view class="cu-avatar padding-sub radius lg bg-white" style="width:150rpx;">
+          <image src="/image/i.png" mode="aspectFit"></image>
+        </view>
+
+        <view class="content">
+          <view class="text-black">
+            <text class="text-cut">{{item.name}}</text>
+          </view>
+
+          <view class="text-grey">
+            <text class="text-cut sty">发布：{{item.organize}}</text>
+          </view>
+          <view class="text-grey">
+            <text class="text-cut sty">地点：{{item.ad}}</text>
+          </view>
+          <view class="text-gray text-sm text-right">
+            <text class="cuIcon-calendar"></text><text class="text-cut">{{item.sd}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 侧面抽屉 -->
+    <view class="cu-modal drawer-modal justify-start {{modalName=='DrawerModalL'?'show':''}}" bindtap="hideModal">
+      <view class="cu-dialog basis-lg"  style="top:{{CustomBar}}px;height:calc(100vh - {{CustomBar}}px)">
+        <view class="cu-list menu text-left">
+          <view class="cu-item arrow" wx:for="{{list1}}" wx:key="index1" bindtap="chooseProject" data-id="{{index1}}" wx:for-index="index1">
+            <view class="content">
+              <view>{{item}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <block wx:if="{{TabCur==1}}">
+    <image src="/image/i.png" mode="scaleToFill" style="width: 200rpx;height: 200rpx;margin-left: 36%;"></image>
+
+    <form>
+
+      <view class="cu-form-group solid-bottom">
+        <view class="title text-black">项目名称：</view>
+        <input name="name" placeholder="请输入项目名称" bindinput="inputName"></input>
+      </view>
+      <view class="cu-form-group solid-bottom">
+        <view class="title text-black">发布组织：</view>
+        <input name="phone" placeholder="请输入发布的组织名称" bindinput="inputOg"></input>
+      </view>
+      <view class="cu-form-group solid-bottom">
+        <view class="title text-black">联系人名称：</view>
+        <input name="name" placeholder="请输入联系人名称" bindinput="inputCn"></input>
+      </view>
+      <view class="cu-form-group solid-bottom">
+        <view class="title text-black">联系人电话：</view>
+        <input name="phone" placeholder="请输入联系人电话" bindinput="inputCp"></input>
+      </view>
+      <view class="cu-form-group solid-bottom">
+        <view class="title text-black">年龄限制：</view>
+        <input name="lowAge" placeholder="最低年龄" bindinput="inputLowage"></input>~~
+        <input name="HighAge" placeholder="最高年龄" class="margin-xs" bindinput="inputHighage"></input>
+      </view>
+      <view class="cu-form-group solid-bottom">
+        <view class="title text-black">人数限制：</view>
+        <input name="number" placeholder="请输入项目需要志愿者人数" bindinput="inputLimit"></input>
+      </view>
+      <view class="cu-form-group">
+        <view class="title text-black">服务开始日期:</view>
+        <picker mode="date" value="{{beginDate}}" start="2020-09-01" end="2026-09-01" bindchange="DateChange1">
+          <view class="picker flex justify-start">
+            {{beginDate}}
+          </view>
+        </picker>
+      </view>
+      <view class="cu-form-group">
+        <view class="title text-black">服务结束日期:</view>
+        <picker mode="date" value="{{endDate}}" start="2020-09-01" end="2026-09-01" bindchange="DateChange2">
+          <view class="picker flex justify-start">
+            {{endDate}}
+          </view>
+        </picker>
+      </view>
+      <view class="cu-form-group">
+        <view class="title text-black">服务开始时间:</view>
+        <picker mode="time" value="{{beginTime}}" start="08:00" end="22:00" bindchange="TimeChange1">
+          <view class="picker flex justify-start">
+            {{beginTime}}
+          </view>
+        </picker>
+      </view>
+      <view class="cu-form-group">
+        <view class="title text-black">服务结束时间:</view>
+        <picker mode="time" value="{{endTime}}" start="{{beginTime}}" end="22:00" bindchange="TimeChange2">
+          <view class="picker flex justify-start">
+            {{endTime}}
+          </view>
+        </picker>
+      </view>
+
+
+      <view class="cu-form-group align-start solids-bottom">
+        <view class="title text-black">活动地点：</view>
+        <textarea name="content" maxlength="-1" bindinput="textareaAInput" placeholder="请输入活动的详细地点"></textarea>
+      </view>
+
+      <view class="cu-form-group align-start solids-bottom">
+        <view class="title text-black">项目简述：</view>
+        <textarea name="content" maxlength="-1" bindinput="textareaBInput" placeholder="请输入项目的简单描述"></textarea>
+      </view>
+
+      <view class="cu-bar bg-white">
+        <view class="action text-black">
+          相关图片描述：
+        </view>
+        <view class="action">
+          {{imgList.length}}/9
+        </view>
+      </view>
+      <view class="cu-form-group ">
+        <view class="grid col-4 grid-square flex-sub">
+          <view class="bg-img" wx:for="{{imgList}}" wx:key="index3" bindtap="ViewImage" data-url="{{item}}" name="imgList">
+            <image src='{{item}}' mode='aspectFill'></image>
+            <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+              <text class="cuIcon-close"></text>
+            </view>
+          </view>
+          <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<9}}">
+            <text class="cuIcon-cameraadd"></text>
+          </view>
+        </view>
+      </view>
+
+      <button class="bg-red shadow" form-type="submit" style="margin-top: 100rpx;" bindtap="commit">发布</button>
+    </form>
+  </block>
+
+</view>
+<view wx:if="{{role==0}}">
+  <text>您没有权利发布任务哦~</text>
+</view>

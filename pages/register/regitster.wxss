@@ -26,15 +26,8 @@
     background-color: rgb(255,255,255,0.9);
     border-radius: 20px;
     box-shadow:0rpx 5rpx 10rpx 4rpx rgb(0,0,0,0.3);
-    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
-    /* animation:fadenum 7s 1; */
-  
   }
-  @keyframes fadenum{
-     0%{opacity: 0;}
-     100%{opacity: 1;}
-  }
-  
+
   #title{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 1000;
@@ -42,11 +35,12 @@
     margin-left: 25%;
     line-height: 150rpx;
   }
-  .footer{
-    border-top: 1px solid grey;
-    margin-top: 1300rpx; 
-    background-color: rgb(0,0,0,0);
-    height: 100rpx;
-    text-align: center;
-  }
-  
+#input1{
+width: 90%;margin-left: 5%; box-shadow:0rpx 5rpx 10rpx 4rpx rgb(0,0,0,0.2);
+}
+#input2{
+  margin-top: 60rpx;width: 90%;margin-left: 5%; box-shadow:0rpx 5rpx 10rpx 4rpx rgb(0,0,0,0.2);
+}
+#btn{
+margin-top:60rpx;margin-bottom:100rpx;box-shadow:3rpx 2rpx 9rpx 4rpx#FF6347;
+}

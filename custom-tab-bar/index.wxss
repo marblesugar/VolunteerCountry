@@ -1,6 +1,6 @@
 /* custom-tab-bar/index.wxss */
-@import "../colorui/main.wxss";
-@import "../colorui/icon.wxss";
+/* @import "../colorui/main.wxss";
+@import "../colorui/icon.wxss"; */
 .tabbar{
   background-color: #ffffff;
 }
@@ -14,4 +14,3 @@
 .default{
   color:rgb(51, 24, 24);
 }
-

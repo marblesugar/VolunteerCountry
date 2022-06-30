@@ -1,31 +1,36 @@
 <!--pages/register/regitster.wxml-->
-<view class="body" bindtap="toggle">
-    <image class='img1' src="/image/Milestones of business projects.gif" mode="top"></image>
-    <image class="img2" src="/image/Group-amico.png" mode="aspectFill"></image>
-    <view id="form1">
-        <text id="title">欢迎注册志愿乡村</text>
-        <form action="">
-            <view class="cu-form-group solids-bottom round shadow" style="width: 90%;margin-left: 5%; box-shadow:0rpx 5rpx 10rpx 4rpx rgb(0,0,0,0.2);">
-                <input type="text" id="phone_number" placeholder="请输入账号" placeholder-placeholder-holder="plas" bindinput="accInput"></input>
-            </view>
-            <view class="cu-form-group solids-bottom round shadow" style="margin-top: 60rpx;width: 90%;margin-left: 5%; box-shadow:0rpx 5rpx 10rpx 4rpx rgb(0,0,0,0.2);">
-                <input type="password" id="pwd" placeholder="请输入密码" placeholder-holder="plas" bindinput="pwdInput"></input>
-            </view>
-            <view class="margin text-black text-bold">请选择注册身份:</view>
-            <view class="action margin">
-                <radio-group bindchange="SetBorderSize">
-                    <label class="margin-left-lg">
-                        <radio class="red sm radio" value="" checked></radio>
-                        <text> 志愿者</text>
-                    </label>
-                    <label class="margin-left-lg">
-                        <radio class="red sm radio" value="s"></radio>
-                        <text> 发起者</text>
-                    </label>
-                </radio-group>
-            </view>
-            <button class="bg-red round shadow-blur" form-type="submit" style="margin-top:60rpx;margin-bottom:40rpx;box-shadow:3rpx 2rpx 9rpx 4rpx#FF6347;" bindtap="register">注册</button>
-        </form>
-    </view>
+<view class="body">
+  <!-- 背景 -->
+  <image class='img1' src="/image/Milestones of business projects.gif" mode="top"></image>
+  <image class="img2" src="/image/Group-amico.png" mode="aspectFill"></image>
+  <!-- 表单 -->
+  <view id="form1">
+    <text id="title">欢迎注册志愿乡村</text>
+    <form action="">
+      <view class="cu-form-group round" id="input1">
+        <input type="text" placeholder="请输入手机号" bindinput="inputPhone" name="phone"></input>
+      </view>
 
+      <view class="cu-form-group round" id="input2">
+        <input type="password" placeholder="请输入密码" bindinput="inputPassword" name="password"></input>
+      </view>
+
+      <view class="margin text-black text-bold">请选择注册身份:</view>
+      <view class="action margin">
+        <radio-group bindchange="roleChoose" name="role">
+          <label class="margin-left-lg">
+            <radio class="red sm radio" value="0" checked></radio>
+            <text> 志愿者</text>
+          </label>
+          <label class="margin-left-lg">
+            <radio class="red sm radio" value="1"></radio>
+            <text> 发起者</text>
+          </label>
+        </radio-group>
+      </view>
+
+      <button class="bg-red round shadow-blur" form-type="submit" bindtap="sure">注册</button>
+    </form>
+
+  </view>
 </view>
