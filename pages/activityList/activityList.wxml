@@ -11,7 +11,7 @@
  </view> 
 </view>
 
-<view class="cu-list menu-avatar" style="margin-bottom: 140rpx;">
+<view class="cu-list menu-avatar">
 
   <view class="cu-item margin-sm radius"  bindtap="toSomeone" data-id="{{item.id}}" wx:for="{{list}}" wx:key="index1"  
   style="height: 200rpx;border-left: 18rpx solid #F74D4D;box-shadow: 0 7rpx 8rpx 4rpx rgb(0, 0,0,0.1);"

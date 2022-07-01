@@ -1,12 +1,13 @@
 // pages/info/info.js
 var app=getApp();
+var time = require('../../utils/util.js');
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        avatar: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big81020.jpg',
+        avatar: 'https://chenmoc.com/vtimg/a0.jpg',
         name: '',
         true_name:'',
         role: "",
@@ -14,9 +15,10 @@ Page({
         email: '',
         sexIndex:'',
         sexPicker: ['男', '女'],
-        birthday: '2018-01-01',
+        birthday: '',
         region: ['山东省', '济南市', '市中区'],
         color: [0, 0, 0, 0, 0, 0,0], //0代表黑色，1代表'#E81010'
+        today:'',
     },
     nameChange(e) {
         // console.log(e);
@@ -203,6 +205,7 @@ emailInput(e){
             showCancel: false
           })
         }  else {
+          console.log(that.data.birthday);
           wx.request({
             url: 'https://chenmoc.com/vt/profile.php',
             method: 'POST',
@@ -244,10 +247,13 @@ emailInput(e){
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+
       this.setData({
         phone:app.globalData.phone,
-        role:app.globalData.role
+        role:app.globalData.role,
+        today: time.formatTimeSec(new Date(), 'Y-M-D')
       })
+
         var that = this;
           wx.request({
             url: 'https://chenmoc.com/vt/profileload.php',
@@ -274,7 +280,7 @@ emailInput(e){
                   true_name:res.data.mess.name,
                   email: res.data.mess.mail,
                   sexIndex:res.data.mess.gender,
-                  birthday:res.data.mess.birth,
+                  birthday:res.data.mess.birth==''?that.data.today:res.data.mess.birth,
                   region:res.data.mess.address
                  })
              

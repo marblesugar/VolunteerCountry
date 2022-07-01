@@ -35,6 +35,7 @@ Page({
     content2: "", //项目简述
     imgList: [], //照片地址
     index: "",
+    input:"",
     // index1:"",
     // list2: [{
     //     id: 1,
@@ -87,7 +88,7 @@ Page({
     //   },
     // ],
     list2: [],
-    list1: ["未审批项目", "待开始项目", "进行中", "历史项目"]
+    list1: ["未审批项目", "待开始项目", "进行中", "历史项目","驳回项目"]
   },
   inputName(e) {
     // console.log(e);
@@ -315,7 +316,9 @@ Page({
               header: {
                 "Content-Type": "multipart/form-data"
               },
-              formData: {},
+              formData: {
+                id:res.data.id
+              },
               success: function (re) {
                 if ((that.data.imgList.length - 1) == i) {
                   wx.hideLoading();
@@ -383,9 +386,10 @@ Page({
       url: 'https://chenmoc.com/vt/missionkind.php',
       method: "POST",
       //0后端搜索 state==0 未审批
-      //1后端搜索 startDate>当天 的项目 未开始
-      //2后端搜索 startDate<=当天<=endDate 的项目 进行中
-      //3后端搜索 当天>endDate 的项目 历史
+      //1后端搜索 startDate>当天 的项目&&state==1  未开始
+      //2后端搜索 startDate<=当天<=endDate&&state==1 的项目 进行中
+      //3后端搜索 当天>endDate&&state==1 的项目 历史
+      //4 state==-1 驳回
       data: {
         op: id,
         phone: app.globalData.phone,
@@ -431,50 +435,58 @@ Page({
     }, 2000);
   },
   search(e) {
-    var that = this;
-    //与服务器交互
-    wx.request({
-      url: 'https://chenmoc.com/vt/search.php',
-      method: "POST",
-      data: {
-        input: that.data.input
-      },
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      success(res) {
-        console.log(res.data);
-        if (res.data.error_code == -1) {
-          wx.showModal({
-            title: '提示',
-            content: res.data.msg,
-            showCancel: false,
-            success(res) {}
-          })
-        } else { //error_code==0获取数据成功
-          that.setData({
-            list2: res.data.info
-          })
-          console.log(res.data.info);
-        }
-      },
-      fail: function (res) {
-        wx.showModal({
-          title: "哎呀",
-          content: "网络不在状态呢~",
-          success: function (res) {
-            if (res.confirm) {
-              console.log('用户点击确定')
-            } else if (res.cancel) {
-              console.log('用户点击取消')
-            }
+    
+    if(this.data.input==""){
+      wx.redirectTo({
+        url: '/pages/publisher/publisher',
+      })
+    }else{
+      var that = this;
+      //与服务器交互
+      wx.request({
+        url: 'https://chenmoc.com/vt/search.php',
+        method: "POST",
+        data: {
+          input: that.data.input
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success(res) {
+          console.log(res.data);
+          if (res.data.error_code == -1) {
+            wx.showModal({
+              title: '提示',
+              content: res.data.msg,
+              showCancel: false,
+              success(res) {}
+            })
+          } else { //error_code==0获取数据成功
+            that.setData({
+              list2: res.data.info
+            })
+            console.log(res.data.info);
           }
-        })
-      },
-      complete: function (res) {
-        wx.hideLoading()
-      }
-    })
+        },
+        fail: function (res) {
+          wx.showModal({
+            title: "哎呀",
+            content: "网络不在状态呢~",
+            success: function (res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
+          })
+        },
+        complete: function (res) {
+          wx.hideLoading()
+        }
+      })
+    }
+  
   },
   /**
    * 生命周期函数--监听页面加载

@@ -6,7 +6,7 @@
     background-color: white;
     padding-bottom: 90rpx;
 }
-#innerbox{
+.innerbox{
     /* height: 1000rpx; */
     white-space:pre-line;
     line-height: 65rpx;

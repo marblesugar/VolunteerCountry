@@ -1,0 +1,38 @@
+<!--pages/signUpVol/signUpVol.wxml-->
+
+  <form>
+<view class="cuIcon-time margin bg-grey padding-xs">  该项目的报名人员有：</view>
+<view style="border:2px solid #4682B4;width: 96%;margin-left: 2%;border-radius: 10px;padding:20px;height: 700rpx;">
+	<view class="cu-form-group" wx:for="{{list}}" wx:key="index1" bindtap="selectVol" name="chooseVol">
+		<view class="title">{{item.name}}</view>
+		<checkbox class="blue"></checkbox>
+	</view>
+</view>
+<view class="cu-form-group">
+        <view class="title text-black">服务开始日期:</view>
+        <picker mode="date" value="{{beginDate}}" start="2020-09-01" end="2026-09-01" bindchange="DateChange1">
+          <view class="picker flex justify-start">
+            {{beginDate}}
+          </view>
+        </picker>
+      </view>
+      <view class="cu-form-group">
+        <view class="title text-black">服务开始时间:</view>
+        <picker mode="time" value="{{beginTime}}" start="08:00" end="22:00" bindchange="TimeChange1">
+          <view class="picker flex justify-start">
+            {{beginTime}}
+          </view>
+        </picker>
+      </view>
+      <view class="cu-form-group">
+        <view class="title text-black">服务结束时间:</view>
+        <picker mode="time" value="{{endTime}}" start="{{beginTime}}" end="22:00" bindchange="TimeChange2">
+          <view class="picker flex justify-start">
+            {{endTime}}
+          </view>
+        </picker>
+      </view>
+
+
+	<button class="cu-btn bg-red shadow" form-type="submit" style="margin-top: 20rpx;margin-left:80%;width: 120rpx;">确认</button>
+</form>

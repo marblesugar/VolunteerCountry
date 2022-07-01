@@ -10,7 +10,7 @@
         <view class="bg-white shadow-warp margin padding" style="width: 90%;">
             <view class="text-bold text-black text-center margin">
                 社区联防联控志愿服务承诺书</view>
-            <view id="innerbox"> {{content1}}</view>
+            <view class="innerbox"> {{content1}}</view>
         </view>
         <view class="text-center margin-top-lg">我同意：<switch class="red sm" bindchange="type_switch"></switch>
         </view>
@@ -55,18 +55,31 @@
                 年龄限制：{{list1.amin==''?'无下限':list1.amin}}~{{list1.amax==''?'无上限':list1.amax}}
             </view>
         </view>
-        <view class="flex" wx:if="{{op!=1}}">
-            <button class="cu-btn bg-red text-center margin" style="width:200rpx;" bindtap="signUp">我要报名</button>
+        <view class="flex" wx:if="{{op!=1&&role==0}}">
+            <button class="cu-btn bg-red text-center margin" style="width:200rpx;" bindtap="signUp" wx:if="{{list1.sd>today}}">我要报名</button>
+            <button class="cu-btn bg-grey text-center margin" style="width:200rpx;" wx:else="{{list1.sd>today}}">不能报名</button>
             <button class="cu-btn bg-gray text-center margin shadow" style="width:200rpx;" bindtap="toOnetalk">我要私聊</button>
         </view>
         <view  wx:if="{{op==1}}" class="text-center">
-          <!-- <button class="cu-btn bg-red text-center margin" style="width:200rpx;" bindtap="delete">报名详情</button> -->
+          <button class="cu-btn bg-blue text-center margin" style="width:200rpx;margin-right: 50rpx;" bindtap="signUpVol">报名详情</button>
           <button class="cu-btn bg-red text-center margin" style="width:200rpx;" bindtap="delete">删除项目</button>
         </view>
     </block>
 
     <block wx:if="{{TabCur==2&&type_switch==true}}">
-        <view class="margin" id="innerbox"> {{list1.de}}</view>
+      <view class="cu-bar bg-white" wx:if="{{imgLen>0}}">
+        <view class="action">
+          相关图片描述：
+        </view>
+      </view>
+      <view class="cu-form-group" wx:if="{{imgLen>0}}">
+        <view class="grid col-4 grid-square flex-sub">
+          <view class="bg-img" wx:for="{{imgList}}" wx:key="index3" bindtap="ViewImage" name="imgList">
+            <image src='https://chenmoc.com/vtimg/{{project_id}}{{index+1}}.jpg' mode='aspectFill'></image>
+          </view>
+        </view>
+      </view>
+        <view class="margin innerbox"> {{list1.de}}</view>
     </block>
 
 </view>

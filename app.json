@@ -18,6 +18,7 @@
         "pages/privateTalk/privateTalk",
         "pages/oneTalk/oneTalk",
         "pages/publisher/publisher",
+        "pages/signUpVol/signUpVol",
         "pages/test/test",
         "pages/logs/logs"
     ],

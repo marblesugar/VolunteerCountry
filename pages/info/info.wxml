@@ -41,7 +41,7 @@
 
     <view class="cu-form-group margin-left margin-right radius" style="color:{{color[2]==0?'black':'#E81010'}};border-bottom:1.5px solid {{color[2]==0?'lightgrey':'#E81010'}}">
         <view class="title margin-left">生日</view>
-        <picker mode="date" value="{{birthday}}" start="2015-09-01" end="2020-09-01" bindtap="birthInput" bindchange="DateChange">
+        <picker mode="date" value="{{birthday}}" start="1901-09-01" end="2022-09-01" bindtap="birthInput" bindchange="DateChange">
             <view class="picker margin-right">
                 {{birthday}}
             </view>

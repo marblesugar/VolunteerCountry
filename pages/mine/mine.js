@@ -6,9 +6,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    avatar: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big81020.jpg',
-    name: '凯尔',
-    grade:'67.8%',
+    avatar: 'https://chenmoc.com/vtimg/a0.jpg',
+    name: '李博豪',
+    grade:'70%',
+    num:70,
+    role:'',
   },
   logOut(e){
     wx.showModal({
@@ -89,6 +91,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      role:app.globalData.role
+    })
     let that = this;
     setTimeout(function() {
       that.setData({

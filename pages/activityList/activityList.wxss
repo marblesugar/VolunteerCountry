@@ -10,3 +10,6 @@
   word-break: break-all;      /* 注意这个文字多行很重要 */
   -webkit-box-orient: vertical;
 }
+.cu-list{
+ padding-bottom: 200rpx;
+}

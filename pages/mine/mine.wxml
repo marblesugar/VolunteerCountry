@@ -13,7 +13,8 @@
             <view class="cu-progress round margin-top xs" style="width: 100rpx;">
                 <view class="bg-red" style="width:{{grade}}; "></view>
             </view>
-            <text class="text-xs margin-left-xs">{{grade}}</text>
+            <view class="text-xs margin-left-xs" wx:if="{{role==0}}">已做了{{num}}次志愿活动</view>
+            <view class="text-xs margin-left-xs" wx:if="{{role==1}}">已发布了{{num}}次志愿活动</view>
         </view>
         <view class="text-lg text-bold padding">{{name}}</view>
     </view>
@@ -24,7 +25,7 @@
         <text class="cuIcon-right margin-xs" style="margin-left:40%;font-size: 40rpx;"></text>
     </view>
 
-    <view class="grid col-1 margin-left-xs padding align-center" bindtap="toServelog">
+    <view class="grid col-1 margin-left-xs padding align-center" bindtap="toServelog" wx:if="{{role==0}}">
         <text class="cuIcon-time radius padding-xs" style="font-size: 70rpx;background-color:#DEFCDC;color: #26D35A;"></text>
         <text class="text-lg" style="margin-left: 8%;">服务记录</text>
         <text class="cuIcon-right margin-xs" style="margin-left:40%;font-size: 40rpx;"></text>
